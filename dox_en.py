@@ -27,14 +27,14 @@ class Colores:
 
 os.system("killall php")
 os.system("clear")
-logo = Colores.purple + '''
+logo = Colores.magenta + '''
 
- ▄███▄   █        ██    ██   ██      ██  ▀████▀
+ ▄███▄   █        ██    ██   ██      ██    ██ 
 ██▀ ▀██  █  ████  ██    ██   ██      ██    ██ 
 ███████  █  █─██  ██    ██   ██      ██    ██       
 ██   ██  █  █─██  ██    ██   ██  ▄█▀▀██    ██
 ██   ██  █  ████  ████  ██   ██  █   ██    ██
-██   ██             ██   ▀███▀   ▀█▄▄██   ▄██▄
+██   ██             ██   ▀███▀   ▀█▄▄██    ██
 
                                          
 
@@ -897,7 +897,7 @@ def menu():
     os.system("clear")
     print(logo)
     print(Colores.red + '''
-    [~] Welcome to Doxxer Toolkit!
+    [~] Welcome to AqudiTools!
                       
     [1] IPloggers      
     [2] Geolocate IP           
