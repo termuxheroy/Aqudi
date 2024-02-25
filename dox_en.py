@@ -50,7 +50,7 @@ logo = Colores.red + '''
 def sher():
   os.system("clear")
   print(logo)
-  print('\n[1] Search with Doxxer Toolkit')
+  print('\n[1] Search with AqudiTools')
   print('[2] Sherlock (Program)')
   print('[3] Nexfil (Program)')
   print('[4] Basic search with socialscan')
