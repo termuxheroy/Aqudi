@@ -667,7 +667,6 @@ def numero():
             numero()
     elif var == 4:
         print("SOON")
-      menu()
     elif var == 00:
       menu()
     elif var == 99:
