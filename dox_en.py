@@ -14,7 +14,14 @@ import png
 from faker import Faker
 import webbrowser
 from modules import numeros_en, phoneinf_en
-
+login = 123123
+password = int(input('введите пароль:' ))
+if login = password:
+  print("Успешный вход")
+else:
+  print("Неправильный пароль")
+  exit()
+  
 Version = "1.1"
 
 class Colores:
