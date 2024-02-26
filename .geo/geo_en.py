@@ -11,10 +11,11 @@ from platform import system
 
 class colores:
     red="\033[31;1m"
+    magenta="\033[95m"
 
 
 os.system("clear")
-logo = colores.red + '''
+logo = colores.magenta + '''
              uu$:$:$:$:$:$uu
           uu$$$$$$$$$$$$$$$$$uu
          u$$$$$$$$$$$$$$$$$$$$$u
@@ -40,9 +41,9 @@ $$$$***$$$$$$$$$$uuu   uu$$$$$$$$$***$$$*
  $$$$$$$$$$****           **$$$$$$$$$$$*
    *$$$$$*                      **$$$$**
      $$$*    ___________________  $$$$*
-            |Made by: Euronymou5|
+            |Made by:Aqudi      |
             |___________________|
-            | Spyrod Version: v3|
+            | Spyrod Version: v1|
             |___________________|
      
      '''  
