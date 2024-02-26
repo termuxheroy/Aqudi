@@ -15,7 +15,7 @@ from faker import Faker
 import webbrowser
 from modules import numeros_en, phoneinf_en
 login = 123123
-password = int(input('введите пароль:' ))
+password = int(input('Введите пароль:' ))
 if login == password:
   print("Успешный вход")
 else:
