@@ -28,7 +28,7 @@ class Colores:
   red="\033[31;1m"
   verde="\033[92m"
   azul="\033[94m"
-  magenta="\033[36m"
+  magenta="\033[95m"
   amarillo="\033[33m"
   
 
