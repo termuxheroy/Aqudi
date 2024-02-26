@@ -14,13 +14,7 @@ import png
 from faker import Faker
 import webbrowser
 from modules import numeros_en, phoneinf_en
-login = 123123
-password = int(input('Введите пароль:' ))
-if login == password:
-  print("Успешный вход")
-else:
-  print("Неправильный пароль")
-  exit()
+
   
 Version = "1.1"
 
@@ -35,21 +29,21 @@ class Colores:
 os.system("killall php")
 os.system("clear")
 logo = Colores.magenta + '''
-
- ▄███▄   █        ██    ██   ██      ██    ██ 
-██▀ ▀██  █  ████  ██    ██   ██      ██    ██ 
-███████  █  █─██  ██    ██   ██      ██    ██       
-██   ██  █  █─██  ██    ██   ██  ▄█▀▀██    ██
-██   ██  █  ████  ████  ██   ██  █   ██    ██
-██   ██             ██   ▀███▀   ▀█▄▄██    ██
-
+                _______              _____    ________    
+     / /\ \    |  ___  |   | |    | || __ \   |_______|
+    / /  \ \   | |   | |   | |    | || |  \ \    | |
+   / /    \ \  | |   | |   | |    | || |   | |   | |
+  / /______\ \ | |   | |   | |    | || |   | |   | |
+  | |______| | | |   | |   | |    | || |   / /   | |
+  | |      | | | |___| |   \ \___/ / | |__/ /   _|_|___  
+  | |      | | |_______|-|  \_____/  |_____/  |________| Tools
                                          
 
                    
                       By:  Aqudi
                     _______________
 
-                     Version: v1.1(beta)
+                     Version: v1.1(BetaFree)
                      _____________
 '''
 
@@ -417,176 +411,7 @@ def emailfak():
     emailfak()
   
 def phishing():
-  os.system("clear")
-  print(logo)
-  print('[1] Using Doxxer Toolkit phishing')
-  print('[2] Zphisher (Program)')
-  print('[3] 0ni-Phish (Program) (Spanish only)')
-  print('[4] MaxPhisher (Program)')
-  print('[00] Back to main menu')
-  print('[99] Exit')
-  var = int(input('\n>> '))
-  if var == 1:
-     print('''
-     [~] Select a language from the page to use:
-     
-     [1] Spanish
-     
-     [2] English
-     ''')
-     lengua = int(input('\n>> '))
-     if lengua == 1:
-       print('''
-       [1] Facebook
-  
-       [2] Google
-    
-       [3] Twitter
-  
-       [4] Instagram
-  
-       [00] Back to main menu
-  
-       [99] Exit
-       ''')
-       YP = int(input('>> '))
-       if YP == 1:
-         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Facebook/usuarios.txt')
-         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Facebook/usuarios.txt')
-         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-         print(' ')
-         cmd = "php -t .pages/Facebook -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-         p = subprocess.Popen(cmd, shell=True)
-         a = p.communicate()[0]
-       elif YP == 2:
-         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Google/usuarios.txt')
-         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Google/usuarios.txt')
-         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-         print(' ')
-         cmd = "php -t .pages/Google -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-         p = subprocess.Popen(cmd, shell=True)
-         a = p.communicate()[0]
-       elif YP == 3:
-         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Twitter/usuarios.txt')
-         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Twitter/usuarios.txt')
-         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-         print(' ')
-         cmd = "php -t .pages/Twitter -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-         p = subprocess.Popen(cmd, shell=True)
-         a = p.communicate()[0]
-       elif YP == 4:
-        print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/Instagram/usuarios.txt')
-        print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/Instagram/usuarios.txt')
-        print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-        print(' ')
-        cmd = "php -t .pages/Instagram -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-        p = subprocess.Popen(cmd, shell=True)
-        a = p.communicate()[0]
-       elif YP == 00:
-        menu()
-       elif YP == 99:
-        exit()
-     elif lengua == 2:
-       print('''
-       [1] Facebook
-  
-       [2] Google
-    
-       [3] Twitter
-  
-       [4] Instagram
-  
-       [00] Back to main menu
-  
-       [99] Exit
-       ''')
-       YP = int(input('>> '))
-       if YP == 1:
-         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/facebook/usernames.txt')
-         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/facebook/usernames.txt')
-         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-         print(' ')
-         cmd = "php -t .pages/en_pages/facebook -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-         p = subprocess.Popen(cmd, shell=True)
-         a = p.communicate()[0]
-       elif YP == 2:
-         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/google_new/usernames.txt')
-         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/google_new/usernames.txt')
-         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-         print(' ')
-         cmd = "php -t .pages/en_pages/google_new -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-         p = subprocess.Popen(cmd, shell=True)
-         a = p.communicate()[0]
-       elif YP == 3:
-         print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/twitter/usernames.txt')
-         print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/twitter/usernames.txt')
-         print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-         print(' ')
-         cmd = "php -t .pages/en_pages/twitter -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-         p = subprocess.Popen(cmd, shell=True)
-         a = p.communicate()[0]
-       elif YP == 4:
-        print(f'\n{Colores.azul}[~] Users will be saved in: Doxxer-Toolkit/.pages/en_pages/instagram/usernames.txt')
-        print(f'\n{Colores.verde}[~] You can see them with the command: cat Doxxer-Toolkit/.pages/en_pages/instagram/usernames.txt')
-        print(f'\n{Colores.magenta}[~] To exit press CTRL + C')
-        print(' ')
-        cmd = "php -t .pages/en_pages/instagram -S localhost:8080 & ssh -R 80:localhost:8080 nokey@localhost.run"
-        p = subprocess.Popen(cmd, shell=True)
-        a = p.communicate()[0]
-       elif YP == 00:
-        menu()
-       elif YP == 99:
-        exit()    
-  elif var == 2:
-     if os.path.exists('.tools/zphisher'):
-        os.system("cd .tools && cd zphisher && bash zphisher.sh")
-     else:
-       print('\n[!] Zphisher is not installed!')
-       var = input('[?] You want to install zphisher [Y/n]: ')
-       if var == "Y" or var == "y":
-          print('\n[~] Installing zphisher...')
-          os.system("cd .tools && git clone https://github.com/htr-tech/zphisher && cd zphisher && bash zphisher.sh")
-          print('[~] Zphisher installed.')
-          time.sleep(1)
-          phishing()
-       elif var == "N" or var == "n":
-           print('\n[~] Back to main menu')
-           time.sleep(1)
-           phishing()
-  elif var == 3:
-     if os.path.exists('.tools/0ni-Phish'):
-        os.system(f"cd .tools/0ni-Phish && python3 0ni.py")
-     else:
-       print('\n[!] 0ni-Phish is not installed!')
-       var = input('[?] You want to install 0ni-Phish [Y/n]: ')
-       if var == "Y" or var == "y":
-          print('\n[~] Instalando 0ni-Phish...')
-          os.system("cd .tools && git clone https://github.com/Euronymou5/0ni-Phish")
-          print('[~] 0ni-Phish installed.')
-          time.sleep(2)
-          phishing()
-       elif var == "N" or var == "n":
-           print('\n[~] Back to main menu')
-           time.sleep(1)
-           phishing()
-  # MaxPhisher
-  elif var == 4:
-     if os.path.exists('.tools/MaxPhisher'):
-        os.system(f"cd .tools/MaxPhisher && python3 maxphisher.py")
-     else:
-       print('\n[!] MaxPhisher is not installed!')
-       var = input('[?] You want to install MaxPhisher [Y/n]: ')
-       if var == "Y" or var == "y":
-          print('\n[~] Installing MaxPhisher...')
-          os.system("cd .tools && git clone https://github.com/KasRoudra/MaxPhisher && pip3 install -r MaxPhisher/files/requirements.txt")
-          print(Colores.verde + '\n[~] MaxPhisher installed.')
-          time.sleep(2)
-          phishing()
-       elif var == "N" or var == "n":
-           print('\n[~] Returning to the main menu')
-           time.sleep(1)
-           phishing()
-  ##  return
+  print("Get Premium version")
   elif var == 00:
      menu()
   elif var == 99:
@@ -622,7 +447,7 @@ def numero():
     print('\n[1] RevealName (Page)')
     print('[2] Get information using Numverify (API)')
     print('[3] Get information using the Phonenumbers module')
-    print('[4] Phoneinfoga (Tool)')
+    print('[4] soon')
     print('[00] Back to main menu')
     print('[99] Exit')
     var = int(input('\n>> '))
@@ -666,7 +491,7 @@ def numero():
             time.sleep(1)
             numero()
     elif var == 4:
-        phoneinf_en.install()
+        print("SOON")
     elif var == 00:
       menu()
     elif var == 99:
