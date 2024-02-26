@@ -1,4 +1,4 @@
-# Doxxer-Toolkit
+# AqudiTools
 **• Una herramienta que integra la recopilación de diversas herramientas, técnicas y fuentes de información, facilitando el realizar un doxxeo.**
 
 **• Todo lo necesario, que un doxxer debe de tener siempre a mano.**
@@ -14,25 +14,16 @@ herramienta queda bajo la responsabilidad del usuario,
 y no me hago responsable de las consecuencias
 resultantes.*
 
-## Repository review:
-- [Instalacion (Español / Spanish)](https://github.com/Euronymou5/Doxxer-Toolkit#instalacion)
-- [Sistemas operativos compatibles (Español / Spanish)](https://github.com/Euronymou5/Doxxer-Toolkit#testeado-en)
-- [Nuevas funciones (Español / Spanish)](https://github.com/Euronymou5/Doxxer-Toolkit#nuevas-funciones)
-- [English repo](https://github.com/Euronymou5/Doxxer-Toolkit?tab=readme-ov-file#doxxer-toolkit-1)
-- [Installation](https://github.com/Euronymou5/Doxxer-Toolkit#installation)
-- [Supported operating systems](https://github.com/Euronymou5/Doxxer-Toolkit#tested-in)
-- [New fuctions](https://github.com/Euronymou5/Doxxer-Toolkit#new-functions)
-- [Imagenes / Images](https://github.com/Euronymou5/Doxxer-Toolkit#imagenes--images)
 
 # Instalacion
 ```bash
 apt install git -y
 ```
 ```bash
-git clone https://github.com/Euronymou5/Doxxer-Toolkit
+git clone https://github.com/termuxheroy/Aqudi
 ```
 ```bash
-cd Doxxer-Toolkit
+cd Aqudi
 ```
 
 ## Instalacion automatica
@@ -66,7 +57,7 @@ python3 dox_en.py
 • Black Arch Linux: ✔
 
 # Version
-• v2.6
+• v 1.1(beta)
 
 # Actualizacion
 
@@ -84,7 +75,7 @@ python3 dox_en.py
 
 -----------------------
 
-# Doxxer-Toolkit
+# AqudiTools
 **• A tool that integrates the compilation of various tools, techniques and sources of information, making it easier to carry out a dox.**
 
 **• Everything necessary that a doxxer should always have on hand.**
@@ -105,10 +96,10 @@ resulting.*
 apt install git -y
 ```
 ```bash
-git clone https://github.com/Euronymou5/Doxxer-Toolkit
+git clone https://github.com/termuxheroy/Aqudi
 ```
 ```bash
-cd Doxxer-Toolkit
+cd Aqudi
 ```
 
 ## Automatic installation
@@ -141,7 +132,7 @@ python3 dox_en.py
 • Black Arch Linux: ✔
 
 # Version
-• v2.6
+• v 1.1(beta)
 
 # Update
 
@@ -166,8 +157,8 @@ python3 dox_en.py
 
 *Preguntas, dudas, ideas:*
 
-**• Discord: euronymou5**
+**• Discord: aqudix**
 
 *Bugs, Problemas de instalacion*:
 
-• **[Reportar en los GitHub Issues](https://github.com/Euronymou5/Doxxer-Toolkit/issues)**
+
