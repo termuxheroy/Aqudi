@@ -622,7 +622,7 @@ def numero():
     print('\n[1] RevealName (Page)')
     print('[2] Get information using Numverify (API)')
     print('[3] Get information using the Phonenumbers module')
-    print('[4] soon
+    print('[4] soon')
     print('[00] Back to main menu')
     print('[99] Exit')
     var = int(input('\n>> '))
