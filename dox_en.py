@@ -1,7 +1,7 @@
-# Doxxer-Toolkit by Euronymou5
-# https://twitter.com/Euronymou51
-# Discord: Euronymou5#3155
-# LICENSE: MPL-2.0 license
+# AqudiTools by Aqudi
+# vk.com/aqudi
+# Discord: aqudix
+
 
 import os
 import time
@@ -15,7 +15,7 @@ from faker import Faker
 import webbrowser
 from modules import numeros_en, phoneinf_en
 
-Version = "2.6"
+Version = "1.1"
 
 class Colores:
   red="\033[31;1m"
@@ -39,10 +39,10 @@ logo = Colores.magenta + '''
                                          
 
                    
-                    By:  Aqudi
+                      By:  Aqudi
                     _______________
 
-                     Version: v1(beta)
+                     Version: v1.1(beta)
                      _____________
 '''
 
