@@ -412,10 +412,7 @@ def emailfak():
   
 def phishing():
   print("Get Premium version")
-  elif var == 00:
-     menu()
-  elif var == 99:
-    exit()
+ 
   
 def sms():
   print('\n[1] Send an anonymous sms using TextBelt')
