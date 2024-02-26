@@ -35,13 +35,9 @@ cd Aqudi
 > Black Arch Linux: `sudo bash install_arch.sh`
 
 
-## Comando para iniciar la herramienta:
+## Start
 
-`Version en español`
 
-```
-python3 dox.py
-```
 
 `Version en ingles`
 
