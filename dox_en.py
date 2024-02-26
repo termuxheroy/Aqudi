@@ -622,7 +622,7 @@ def numero():
     print('\n[1] RevealName (Page)')
     print('[2] Get information using Numverify (API)')
     print('[3] Get information using the Phonenumbers module')
-    print('[4] Phoneinfoga (Tool)')
+    print('[4] soon
     print('[00] Back to main menu')
     print('[99] Exit')
     var = int(input('\n>> '))
@@ -666,7 +666,8 @@ def numero():
             time.sleep(1)
             numero()
     elif var == 4:
-        phoneinf_en.install()
+        print("SOON")
+      menu()
     elif var == 00:
       menu()
     elif var == 99:
