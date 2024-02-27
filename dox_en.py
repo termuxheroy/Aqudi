@@ -801,8 +801,8 @@ def qrcodigo():
     time.sleep(2)
     qrcodigo()
 
-def IPinfo():
-	LOGO()
+def IP():
+	print(logo)
 	ip = input(" Ip:\033[1;m ")
 
 	print("""\033[1;34m
@@ -1023,7 +1023,7 @@ def menu():
     elif elejir == 12:
        os.system("python3 modules/emails_en.py")
     elif elejir == 13:
-	IPinfo()
+	IP()
     elif elejir == 98:
         version = requests.get('https://raw.githubusercontent.com/Euronymou5/Doxxer-Toolkit/main/version.txt')
         if version.status_code == 200:
