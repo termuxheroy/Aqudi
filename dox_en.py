@@ -17,6 +17,16 @@ from modules import numeros_en, phoneinf_en
 import sys, os, webbrowser, platform, subprocess
 from bs4 import BeautifulSoup as htmlparser
 import requests
+import requests
+import socket
+import socks
+import time
+import random
+import threading
+import sys
+import ssl
+import datetime
+import os
 
 login = 123123
 password = int(input('введите пароль:' ))
