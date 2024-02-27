@@ -816,24 +816,24 @@ def ip():
 		""")	
 	Tracker = input("\033[1;35m D0xTr\033[0;31m@\033[1;35mck3r\033[1;m:~\033[1;34m/\033[1;m$\033[1;35m ")
 	if Tracker == "1":
-		webbrowser.open('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
+		webbrowser.open_new('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
 		time.sleep(2)
 		menu()
 	elif Tracker == "2":
-		webbrowser.open('http://whatismyipaddress.com/ip/'+ip)
+		webbrowser.open_new('http://whatismyipaddress.com/ip/'+ip)
 		time.sleep(2)
 		menu()
 	elif Tracker == "3":
-		webbrowser.open('https://dig.whois.com.au/ip/'+ip)
+		webbrowser.open_new('https://dig.whois.com.au/ip/'+ip)
 		time.sleep(2)
 		menu()
 	elif Tracker == "00":
 		time.sleep(2)
-		webbrowser.open('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
+		webbrowser.open_new('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
 		time.sleep(2)
-		webbrowser.open('http://whatismyipaddress.com/ip/'+ip)
+		webbrowser.open_new('http://whatismyipaddress.com/ip/'+ip)
 		time.sleep(2)
-		webbrowser.open('https://dig.whois.com.au/ip/'+ip)
+		webbrowser.open_new('https://dig.whois.com.au/ip/'+ip)
 		time.sleep(2)
 		menu()
 	elif Tracker == "99":
