@@ -801,6 +801,56 @@ def qrcodigo():
     time.sleep(2)
     qrcodigo()
 
+def IPinfo():
+	LOGO()
+	ip = input(" Ip:\033[1;m ")
+
+	print("""\033[1;34m
+ 
+  1. G-force 
+  2. whatismyipaddress
+  3. Whois\033[1;33m
+ 00. All\033[1;m
+==============================
+\033[1;36m    99. Back\033[1;31m    0. Exit
+		""")	
+	Tracker = input("\033[1;35m D0xTr\033[0;31m@\033[1;35mck3r\033[1;m:~\033[1;34m/\033[1;m$\033[1;35m ")
+	if Tracker == "1":
+		KURO()
+		webbrowser.open('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
+		time.sleep(2)
+		menu()
+	elif Tracker == "2":
+		KURO()
+		webbrowser.open('http://whatismyipaddress.com/ip/'+ip)
+		time.sleep(2)
+		menu()
+	elif Tracker == "3":
+		KURO()
+		webbrowser.open('https://dig.whois.com.au/ip/'+ip)
+		time.sleep(2)
+		menu()
+	elif Tracker == "00":
+		KURO()
+		time.sleep(2)
+		webbrowser.open('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
+		time.sleep(2)
+		webbrowser.open('http://whatismyipaddress.com/ip/'+ip)
+		time.sleep(2)
+		webbrowser.open('https://dig.whois.com.au/ip/'+ip)
+		time.sleep(2)
+		menu()
+	elif Tracker == "99":
+		KURO()
+		menu()
+	else:
+		KURO()
+		print(logo)
+		print("\033[1;31m[ERROR]\033[1;m selection invalid!")
+		time.sleep(3)
+		menu()
+
+
 def cortarlink():
   os.system("clear")
   print(logo)
@@ -942,6 +992,7 @@ def menu():
     [10] Link shorteners
     [11] Generate qr code
     [12] OSINT Email (BETA)
+    [13] IPINFO
 
     [98] Update checker
     [99] Exit
@@ -991,6 +1042,9 @@ def menu():
       time.sleep(2)
       os.system("clear")
       menu()
+    else elejir == 13:
+	IPinfo()
+	
     
 
 if __name__ == "__main__":
