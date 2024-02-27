@@ -111,6 +111,7 @@ def sher():
   elif var == 5:
     print('Разверните браузер')
     webbrowser.open('https://namechk.com/')
+    var = int(input('\n>> '))
     print('[00] Menu')
     if var == 00:
       menu()
