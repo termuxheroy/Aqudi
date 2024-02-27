@@ -291,64 +291,6 @@ def geoip():
     print(logo)
     geoip()
 	  
-def PHONE():
-	Num = input(" Number:\033[1;m ")
-
-	print("""\033[1;34m
-  1. Okcaller        
-  2. Facebook     
-  3. France-inverse   
-  4. Whitepages     
-  5. Anywho             
-  6. Canada411      
-  7. Pagesjaunes \033[1;33m	    
- 00. All
-\033[1;m=========================
-\033[1;36m   99. Back\033[1;31m  0. Exit
-		""")
-	Tracker = input("\033[1;35m D0xTr\033[0;31m@\033[1;35mck3r\033[1;m:~\033[1;34m/\033[1;m$\033[1;m ")
-
-	if Tracker == "1":
-		KURO()
-		webbrowser.open('http://www.okcaller.com/'+Num)
-		time.sleep(2)
-		menu()
-	elif Tracker == "2":
-		KURO()
-		webbrowser.open('https://www.facebook.com/search/top/?init=quick&q='+Num)
-		time.sleep(2)
-		menu()
-	elif Tracker == "3":
-		KURO()
-		webbrowser.open('http://www.france-inverse.com/annuaire-inverse/'+Num)
-		time.sleep(2)
-		menu()
-	elif Tracker == "4":
-		KURO()
-		webbrowser.open('https://www.whitepages.com/phone/'+Num)
-		time.sleep(2)
-		menu()
-	elif Tracker == "5":
-		KURO()
-		webbrowser.open('https://www.anywho.com/phone/'+Num)
-		time.sleep(2)
-		menu()
-	elif Tracker == "6":
-		KURO()
-		webbrowser.open('http://canada411.pagesjaunes.ca/fs/'+Num)
-		time.sleep(2)
-		menu()
-	elif Tracker == "7":
-		KURO()
-		webbrowser.open('https://www.pagesjaunes.fr/annuaireinverse/recherche?quoiqui='+Num)
-		time.sleep(2)
-		menu()
-    elif var == 00:
-      menu()
-    elif var == 99:
-      exit()
-   
-
 def emailfak():
   os.system("clear")
   print(logo)
@@ -736,11 +678,9 @@ def numero():
             time.sleep(1)
             numero()
     elif var == 4:
-	    PHONE():
+	    print('soon')
+	    menu()
 	    
-      
-	
-
 def osintpa():
   os.system("clear")
   print(logo)
