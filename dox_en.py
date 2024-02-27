@@ -14,6 +14,7 @@ import png
 from faker import Faker
 import webbrowser
 from modules import numeros_en, phoneinf_en
+import sys, os, webbrowser, platform, subprocess
 login = 123123
 password = int(input('введите пароль:' ))
 if login == password:
@@ -62,6 +63,7 @@ def sher():
   print('[2] Sherlock (Program)')
   print('[3] Nexfil (Program)')
   print('[4] Basic search with socialscan')
+  print('[5] WebNick(beta')
   print('[00] Back to main menu')
   print('[99] Exit')
   var = int(input('\n>> '))
@@ -106,6 +108,13 @@ def sher():
   elif var == 4:
      user = input('\n[~] Enter a user to search: ')
      os.system(f"socialscan {user} --show-urls")
+  elif var == 5:
+    print('Разверните браузер')
+    webbrowser.open('https://namechk.com/')
+    print('[00] Menu')
+    if var == 00:
+      menu()
+    
   elif var == 00:
      menu()
   elif var == 99:
