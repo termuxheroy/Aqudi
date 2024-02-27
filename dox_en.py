@@ -680,7 +680,6 @@ def numero():
             numero()
     elif var == 4:
       def PHONE(): 
-	time.sleep(1)
 	Num = input(" Number:\033[1;m ")
 
 	print("""\033[1;34m
