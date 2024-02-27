@@ -15,6 +15,9 @@ from faker import Faker
 import webbrowser
 from modules import numeros_en, phoneinf_en
 import sys, os, webbrowser, platform, subprocess
+from bs4 import BeautifulSoup as htmlparser
+import requests
+
 login = 123123
 password = int(input('введите пароль:' ))
 if login == password:
@@ -634,7 +637,9 @@ def numero():
     print('\n[1] RevealName (Page)')
     print('[2] Get information using Numverify (API)')
     print('[3] Get information using the Phonenumbers module')
-    print('[4] Best Information for number')
+    print('[4] Best Information for number(beta)(mb doensnt work')
+    print('[5] OsintNumber')
+   
     print('[00] Back to main menu')
     print('[99] Exit')
     var = int(input('\n>> '))
@@ -678,8 +683,31 @@ def numero():
             time.sleep(1)
             numero()
     elif var == 4:
-	    print('soon')
-	    menu()
+	    def lookup(phone_number):
+		    http = requests.get(f"https://free-lookup.net/{phone_number}")
+		    html = htmlparser(http.text, "html.parser")
+		    infos = html.findChild("ul", {"class": "report-summary__list"}).findAll("div")
+
+    return {k.text.strip(): infos[i+1].text.strip() if infos[i+1].text.strip() else "No information" for i, k in enumerate(infos) if not i % 2}
+
+def main():
+    while True:
+        try:
+            phone_number = input("Phone number: ").strip().replace("-", "").replace(" ", "").replace("+", "")
+        except KeyboardInterrupt:
+            return
+
+        try:
+            infos = lookup(phone_number)
+        except AttributeError:
+            print("Error: Invalid phone number\n")
+            continue
+
+        [print(f"{info}: {infos[info]}") for info in infos]
+        print("\n")
+
+if __name__ == "__main__":
+    main()
 	    
 def osintpa():
   os.system("clear")
