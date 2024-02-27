@@ -816,22 +816,18 @@ def ip():
 		""")	
 	Tracker = input("\033[1;35m D0xTr\033[0;31m@\033[1;35mck3r\033[1;m:~\033[1;34m/\033[1;m$\033[1;35m ")
 	if Tracker == "1":
-		KURO()
 		webbrowser.open('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
 		time.sleep(2)
 		menu()
 	elif Tracker == "2":
-		KURO()
 		webbrowser.open('http://whatismyipaddress.com/ip/'+ip)
 		time.sleep(2)
 		menu()
 	elif Tracker == "3":
-		KURO()
 		webbrowser.open('https://dig.whois.com.au/ip/'+ip)
 		time.sleep(2)
 		menu()
 	elif Tracker == "00":
-		KURO()
 		time.sleep(2)
 		webbrowser.open('https://www.g-force.ca/en/hosting/ip-whois?ip='+ip)
 		time.sleep(2)
@@ -841,10 +837,8 @@ def ip():
 		time.sleep(2)
 		menu()
 	elif Tracker == "99":
-		KURO()
 		menu()
 	else:
-		KURO()
 		print(logo)
 		print("\033[1;31m[ERROR]\033[1;m selection invalid!")
 		time.sleep(3)
