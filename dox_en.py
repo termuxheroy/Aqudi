@@ -679,9 +679,7 @@ def numero():
             time.sleep(1)
             numero()
     elif var == 4:
-      def PHONE():
-	KURO()
-	LOGO()  
+      def PHONE(): 
 	time.sleep(1)
 	Num = input(" Number:\033[1;m ")
 
