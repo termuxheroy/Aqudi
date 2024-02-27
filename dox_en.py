@@ -692,7 +692,9 @@ def numero():
             print(f'{Colores.red}[~] Returning to the main menu...')
             time.sleep(1)
             numero()
-    elif var == 4:	    
+    elif var == 4:
+	    print('soon')
+	    
 	
 	  
 def osintpa():
