@@ -35,7 +35,7 @@ Password1 = MQMQMQ
 vvod = input("Введите логин")
 if vvod == login1:
 	print('Привет Grib.')
-    passw = input("Введите пароль")
+    	passw = input("Введите пароль")
     if passw == Password1:
       print("Успешный вход.Приятной работы")
     else:
