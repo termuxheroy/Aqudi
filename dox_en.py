@@ -34,7 +34,7 @@ Password = AqudiMQ
 Password1 = MQMQMQ
 vvod = input("Введите логин")
 if vvod = login1:
-	print('Привет Grib.)
+	print('Привет Grib.')
     passw = input("Введите пароль")
     if passw = Password1:
       print("Успешный вход.Приятной работы")
@@ -44,7 +44,7 @@ if vvod = login1:
 
     
 elif vvod = login:
-    print('Привет Aqudi.)
+    print('Привет Aqudi.')
     passw1 = input("Введите пароль")
     if passw1 = Password:
     print("Успешный вход.Приятной работы")
