@@ -28,33 +28,7 @@ import ssl
 import datetime
 import os
 
-login = Aqudi
-login1 = Grib
-Password = AqudiMQ
-Password1 = MQMQMQ
-vvod = input("Введите логин")
-if vvod == login1:
-	print('Привет Grib.')
-    	passw = input("Введите пароль")
-    if passw == Password1:
-      print("Успешный вход.Приятной работы")
-    else:
-      print('Неправильный пароль.Get - vk.com.aqudi')
-      exit()
 
-    
-elif vvod == login:
-    print('Привет Aqudi.')
-    passw1 = input("Введите пароль")
-    if passw1 == Password:
-    print("Успешный вход.Приятной работы")
-    else:
-    print('Неправильный пароль.Get - vk.com/aqudi')
-    exit()
-
-else:
-    print('Такой логин не зарегестрирован')
-    exit()
   
 Version = "1.1"
 
