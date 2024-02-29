@@ -33,20 +33,20 @@ login1 = Grib
 Password = AqudiMQ
 Password1 = MQMQMQ
 vvod = input("Введите логин")
-if vvod = login1:
+if vvod == login1:
 	print('Привет Grib.')
     passw = input("Введите пароль")
-    if passw = Password1:
+    if passw == Password1:
       print("Успешный вход.Приятной работы")
     else:
       print('Неправильный пароль.Get - vk.com.aqudi')
       exit()
 
     
-elif vvod = login:
+elif vvod == login:
     print('Привет Aqudi.')
     passw1 = input("Введите пароль")
-    if passw1 = Password:
+    if passw1 == Password:
     print("Успешный вход.Приятной работы")
     else:
     print('Неправильный пароль.Get - vk.com/aqudi')
