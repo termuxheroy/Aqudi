@@ -8,7 +8,7 @@ import time
 import subprocess
 import random
 import requests
-import pyahorteners
+import pyshorteners
 import pyqrcode
 import png
 from faker import Faker
