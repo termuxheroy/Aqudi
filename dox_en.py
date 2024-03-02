@@ -593,12 +593,12 @@ def phishing():
      if os.path.exists('.tools/MaxPhisher'):
         os.system(f"cd .tools/MaxPhisher && python3 maxphisher.py")
      else:
-       print('\n[!] MaxPhisher is not installed!')
-       var = input('[?] You want to install MaxPhisher [Y/n]: ')
+       print('\n[!] AqudiPhisher is not installed!')
+       var = input('[?] You want to install AqudiPhisher [Y/n]: ')
        if var == "Y" or var == "y":
-          print('\n[~] Installing MaxPhisher...')
-          os.system("cd .tools && git clone https://github.com/KasRoudra/MaxPhisher && pip3 install -r MaxPhisher/files/requirements.txt")
-          print(Colores.verde + '\n[~] MaxPhisher installed.')
+          print('\n[~] Installing AqudiPhisher...')
+          os.system("cd .tools && git clone https://github.com/termuxheroy/AqudiFish/ && pip3 install -r AqudiPhish/files/requirements.txt")
+          print(Colores.verde + '\n[~] AqudiPhisher installed.')
           time.sleep(2)
           phishing()
        elif var == "N" or var == "n":
