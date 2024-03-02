@@ -438,10 +438,10 @@ def emailfak():
 def phishing():
   os.system("clear")
   print(logo)
-  print('[1] Using Doxxer Toolkit phishing')
+  print('[1] Using Aqudi Toolkit phishing')
   print('[2] Zphisher (Program)')
   print('[3] 0ni-Phish (Program) (Spanish only)')
-  print('[4] MaxPhisher (Program)')
+  print('[4] Aqudi (Program)')
   print('[00] Back to main menu')
   print('[99] Exit')
   var = int(input('\n>> '))
@@ -590,8 +590,8 @@ def phishing():
            phishing()
   # MaxPhisher
   elif var == 4:
-     if os.path.exists('.tools/MaxPhisher'):
-        os.system(f"cd .tools/MaxPhisher && python3 maxphisher.py")
+     if os.path.exists('.tools/AqudiPhish'):
+        os.system(f"cd .tools/AqudiFish && python3 maxphisher.py")
      else:
        print('\n[!] AqudiPhisher is not installed!')
        var = input('[?] You want to install AqudiPhisher [Y/n]: ')
