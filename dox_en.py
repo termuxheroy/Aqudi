@@ -10,7 +10,6 @@ import random
 import requests
 import pyshorteners
 import pyqrcode
-import png
 from faker import Faker
 import webbrowser
 from modules import numeros_en, phoneinf_en
