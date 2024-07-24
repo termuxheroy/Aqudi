@@ -18,7 +18,6 @@ from bs4 import BeautifulSoup as htmlparser
 import requests
 import requests
 import socket
-import socks
 import time
 import random
 import threading
